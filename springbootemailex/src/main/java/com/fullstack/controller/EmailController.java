@@ -21,6 +21,8 @@ public class EmailController {
     @PostMapping("/sendemail")
     public ResponseEntity<String> sendEmail(@RequestBody EmailModel emailModel) {
         log.info("########Sending Email to: " + emailModel.getToEmail());
+
+        log.info("########Sending Email CC: " + emailModel.getCcEmail().toString());
         emailService.sendEmail(emailModel);
 
         return ResponseEntity.ok("Mail Sent Successfully");
