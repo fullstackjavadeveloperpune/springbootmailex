@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class EmailController {
 
+//This code is for email api
     @Autowired
     private IEmailService emailService;
 
@@ -27,6 +28,7 @@ public class EmailController {
         emailService.sendEmail(emailModel);
 
         return new ResponseEntity<>("Mail Sent Successfully!", HttpStatus.OK);
+
 
     }
 }
